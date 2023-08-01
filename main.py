@@ -3,6 +3,7 @@
 
 import random
 import datetime
+import os
 
 # Dados
 
@@ -26,6 +27,13 @@ despedidas_respostas = ["Tchau! :)", "A gente se vê! :)", "Obrigada por hoje, a
 
 
 # Functions
+
+def clear():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 
 def hora_atual():
     # Essa função pega a hora de agora
@@ -83,6 +91,7 @@ ascii_art = """
 
 programa_rodando = True
 
+clear()
 print(ascii_art)
 while programa_rodando:
     frase = str(input(f'{hora_atual()} Hacker -> ')).lower().strip()
@@ -103,5 +112,4 @@ while programa_rodando:
         rascol_resposta(despedidas_respostas)
         programa_rodando = False
     else:
-        print("...;-; AAAAA me desculpa eu não entendi o que você quis dizer. Tente de novo por favor!!!")
-        print("Talvez tenha faltado um artigo, ou algo a mais, eu não sei ;-;")
+        print(f"{hora_atual()} Rascol -> ;-; AAAAA me desculpa eu não entendi o que você quis dizer. Tente de novo por favor!!!")
