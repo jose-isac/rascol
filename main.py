@@ -58,9 +58,32 @@ def rascol_resposta(respostas: list):
     numero_aleatorio = random.randint(0, tamanho_lista_respostas-1)
     print(f"{hora_atual()} Rascol -> {respostas[numero_aleatorio]}")
     
+# Art
+ascii_art = """
+            
+                      WWWWWWWWWW                 dCCb      
+                     WCCCCCCCCCCW               dC  Cb
+                    WCCCCC+++CCCCW              RC  Cb    daab     dssss    dCCCCb     dooob    FF
+                    WCCCC+++++CCCWbb            RCCb     da  ab   cc       dCC   Cb   do   ob   FF
+                    WCCCCC+++CCCC!!!!!!         RC H     FaaaaJ    $$$     OC         Oc   cO   FF
+                     WCCCCCCCCCC!!!!!!!!        RC CH    Fa  aJ      $$b   dCC   Cb   dc   cb   FF
+                      WCCCCCCCCC!!!!!!          RC CH    Fa  aJ   ssssb     dOCCCb     dooob    FFFFFF
+                    WMFFFFFFFFFddd
+                  WMFFFFFFFFFFWW
+                WMFFFFFFFFFFFFWW                           \x1B[3mSua assistente de terminal\x1B[0m.
+              WMFFFFFFFFFFFMFWWWW                                   Alpha 0.2 
+             MWWFFFEEEEEEFMFFFFW
+           MWFFFFEEEEEEEEMFFFWM
+        MMWFFFFFFMEEEEEMMFFFW
+     WWWFFFFFFFFFFFFFFFFFFMW
+      WWWFFFFFFFFFFFFFFFFW
+         MMMMMMMMMMMMMMM
+
+"""
 
 programa_rodando = True
 
+print(ascii_art)
 while programa_rodando:
     frase = str(input(f'{hora_atual()} Hacker -> ')).lower().strip()
 
