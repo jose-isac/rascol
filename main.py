@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import random
+import datetime
 
 # Dados
 
@@ -26,6 +27,16 @@ despedidas_respostas = ["Tchau! :)", "A gente se vê! :)", "Obrigada por hoje, a
 
 # Functions
 
+def hora_atual():
+    # Essa função pega a hora de agora
+
+    tempo_atual = datetime.datetime.now()
+
+    tempo_formatado = tempo_atual.strftime("%H:%M")
+
+    return tempo_formatado
+
+
 def limpar_frase(frase):
     # Esta função remove os seguintes caracteres de determinada frase 
 
@@ -45,13 +56,13 @@ def rascol_resposta(respostas: list):
 
     tamanho_lista_respostas = len(respostas)
     numero_aleatorio = random.randint(0, tamanho_lista_respostas-1)
-    print(f"Rascol -> {respostas[numero_aleatorio]}")
+    print(f"{hora_atual()} Rascol -> {respostas[numero_aleatorio]}")
     
 
 programa_rodando = True
 
 while programa_rodando:
-    frase = str(input('Hacker -> ')).lower().strip()
+    frase = str(input(f'{hora_atual()} Hacker -> ')).lower().strip()
 
     frase = limpar_frase(frase)
 
