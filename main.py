@@ -25,6 +25,9 @@ perguntas_proposito_respostas = ["Eu existo primordialmente porque meu criador q
 despedidas = ["tchau", "tchal", "bye", "bye bye", "ate mais", "flw", "adeus", "good bye", "sayonara", "see you later", "ate depois", "ate qualquer hora", "ate qualquer dia"]
 despedidas_respostas = ["Tchau! :)", "A gente se vê! :)", "Obrigada por hoje, até mais! :P", "Hey, muito obrigada por ter interagido comigo. Até depois. <3", "Você é legal, tchau! :D", "Se cuida viu? <3", "Cuidado ao rodar comandos como super usuário! Tchau! :)", "Tchau e nada de ir dormir depois de 00:00 viu? :>"]
 
+comando_ls = ["fale sobre o comando ls", "o que o ls faz", "como usar o ls", "o ls serve para o que", "o ls serve para que", "o que e o ls"]
+comando_ls_respostas = ["O comando ls serve para mostrar o conteúdo de uma pasta. Algumas opções legais de se utilizar junto com ele é o -l(l de \"long\"; mostra mais detalhes), -F(mostra caracteres para distinguir os tipos de arquivos)-h(mostra o peso dos arquivos em formato mais legível).\nExemplo: ls -lFh\nSe você quiser saber mais informações, utilize o manual com o seguinte comando: man ls   :)"]
+
 
 # Functions
 
@@ -67,7 +70,7 @@ def rascol_resposta(respostas: list):
     print(f"{hora_atual()} Rascol -> {respostas[numero_aleatorio]}")
     
 # Art
-ascii_art = """
+ascii_art = '''
             
                       WWWWWWWWWW                 dCCb      
                      WCCCCCCCCCCW               dC  Cb
@@ -87,7 +90,36 @@ ascii_art = """
       WWWFFFFFFFFFFFFFFFFW
          MMMMMMMMMMMMMMM
 
-"""
+'''
+
+mensagem_parabens = '''
+                                    
+    ####    ##    ####      ##     ####   ####  ##    #   ####       
+    #  ##  #  #   #   #    #  #    #   #  #     # #   #  #           
+    ####  #    #  ####    #    #   ####   ####  #  #  #  ####        
+    ##    ######  #   #   ######   #   #  #     #   # #      #       
+    ##    #    #  #    #  #    #   ####   ####  #    ##  ####        
+ 
+
+                       18               CCCCC       GGGGGG
+                       ##              CCC         GG  
+                       ##              CC          GG  dGGG
+                 dCCCCCECCCCCCb        CCC         GG     G
+                 HEEEEEEEEEEEEH          CCCC   #   GGGGGGG
+                 HMGGGEEEEEGGMH
+                 MMMMMMMMMMMMGW 
+                  WWWWWWWWWWWW
+       
+       
+           Para meu colega, parceiro e amigo.
+           De programador para programador.
+           Meu carinho, em linhas de código.
+           Para sempre registrado na memória...
+                                   
+                           Best regards ~ Isac
+       
+
+''' 
 
 programa_rodando = True
 
@@ -108,8 +140,12 @@ while programa_rodando:
         rascol_resposta(perguntas_criador_respostas)
     elif frase in perguntas_proposito:
         rascol_resposta(perguntas_proposito_respostas)
+    elif frase == "presente":
+        print( f"{hora_atual()} Rascol ->\n{mensagem_parabens}\n") 
     elif frase in despedidas:
         rascol_resposta(despedidas_respostas)
         programa_rodando = False
+    elif frase in comando_ls:
+        rascol_resposta(comando_ls_respostas)
     else:
         print(f"{hora_atual()} Rascol -> ;-; AAAAA me desculpa eu não entendi o que você quis dizer. Tente de novo por favor!!!")
